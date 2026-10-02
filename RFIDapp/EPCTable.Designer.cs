@@ -30,14 +30,14 @@
         {
             label1 = new Label();
             dataGridView1 = new DataGridView();
-            button1 = new Button();
-            button2 = new Button();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
+            button1 = new Button();
+            button2 = new Button();
             button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -66,24 +66,6 @@
             dataGridView1.Size = new Size(742, 225);
             dataGridView1.TabIndex = 1;
             // 
-            // button1
-            // 
-            button1.Location = new Point(152, 369);
-            button1.Name = "button1";
-            button1.Size = new Size(140, 34);
-            button1.TabIndex = 2;
-            button1.Text = "Stop Reading";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(327, 375);
-            button2.Name = "button2";
-            button2.Size = new Size(112, 34);
-            button2.TabIndex = 3;
-            button2.Text = "Clear Table";
-            button2.UseVisualStyleBackColor = true;
-            // 
             // Column1
             // 
             Column1.HeaderText = "EPC";
@@ -98,6 +80,7 @@
             Column2.MinimumWidth = 8;
             Column2.Name = "Column2";
             Column2.ReadOnly = true;
+            Column2.Width = 150;
             // 
             // Column3
             // 
@@ -105,6 +88,7 @@
             Column3.MinimumWidth = 8;
             Column3.Name = "Column3";
             Column3.ReadOnly = true;
+            Column3.Width = 150;
             // 
             // Column4
             // 
@@ -128,6 +112,26 @@
             Column6.MinimumWidth = 8;
             Column6.Name = "Column6";
             Column6.ReadOnly = true;
+            Column6.Width = 150;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(152, 369);
+            button1.Name = "button1";
+            button1.Size = new Size(140, 34);
+            button1.TabIndex = 2;
+            button1.Text = "Stop Reading";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(327, 375);
+            button2.Name = "button2";
+            button2.Size = new Size(112, 34);
+            button2.TabIndex = 3;
+            button2.Text = "Clear Table";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -137,6 +141,7 @@
             button3.TabIndex = 4;
             button3.Text = "Start";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // EPCTable
             // 

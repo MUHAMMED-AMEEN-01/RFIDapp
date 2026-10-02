@@ -36,6 +36,12 @@
             button1 = new Button();
             label4 = new Label();
             label5 = new Label();
+            button2 = new Button();
+            menuStrip1 = new MenuStrip();
+            toolStripMenuItem1 = new ToolStripMenuItem();
+            ePCTableToolStripMenuItem = new ToolStripMenuItem();
+            buzzerToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -86,8 +92,9 @@
             button1.Name = "button1";
             button1.Size = new Size(112, 34);
             button1.TabIndex = 5;
-            button1.Text = "button1";
+            button1.Text = "Connect";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label4
             // 
@@ -106,11 +113,53 @@
             label5.Size = new Size(0, 25);
             label5.TabIndex = 7;
             // 
+            // button2
+            // 
+            button2.Location = new Point(290, 248);
+            button2.Name = "button2";
+            button2.Size = new Size(112, 34);
+            button2.TabIndex = 8;
+            button2.Text = "Disconnect";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(24, 24);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, ePCTableToolStripMenuItem, buzzerToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(800, 33);
+            menuStrip1.TabIndex = 9;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(44, 29);
+            toolStripMenuItem1.Text = "←";
+            toolStripMenuItem1.Click += toolStripMenuItem1_Click;
+            // 
+            // ePCTableToolStripMenuItem
+            // 
+            ePCTableToolStripMenuItem.Name = "ePCTableToolStripMenuItem";
+            ePCTableToolStripMenuItem.Size = new Size(103, 29);
+            ePCTableToolStripMenuItem.Text = "EPC Table";
+            ePCTableToolStripMenuItem.Click += ePCTableToolStripMenuItem_Click;
+            // 
+            // buzzerToolStripMenuItem
+            // 
+            buzzerToolStripMenuItem.Name = "buzzerToolStripMenuItem";
+            buzzerToolStripMenuItem.Size = new Size(79, 29);
+            buzzerToolStripMenuItem.Text = "Buzzer";
+            buzzerToolStripMenuItem.Click += buzzerToolStripMenuItem_Click;
+            // 
             // ReaderConnection
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button2);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(button1);
@@ -119,9 +168,13 @@
             Controls.Add(textBox1);
             Controls.Add(label2);
             Controls.Add(label1);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "ReaderConnection";
             Text = "ReaderConnection";
             WindowState = FormWindowState.Maximized;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -136,5 +189,10 @@
         private Button button1;
         private Label label4;
         private Label label5;
+        private Button button2;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripMenuItem ePCTableToolStripMenuItem;
+        private ToolStripMenuItem buzzerToolStripMenuItem;
     }
 }
