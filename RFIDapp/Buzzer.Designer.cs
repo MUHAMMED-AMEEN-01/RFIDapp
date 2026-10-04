@@ -30,9 +30,9 @@
         {
             button1 = new Button();
             panel1 = new Panel();
-            label1 = new Label();
-            label2 = new Label();
             button2 = new Button();
+            label2 = new Label();
+            label1 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -44,6 +44,7 @@
             button1.TabIndex = 1;
             button1.Text = "Activate";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // panel1
             // 
@@ -55,14 +56,14 @@
             panel1.Size = new Size(726, 194);
             panel1.TabIndex = 2;
             // 
-            // label1
+            // button2
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(41, 29);
-            label1.Name = "label1";
-            label1.Size = new Size(124, 25);
-            label1.TabIndex = 1;
-            label1.Text = "Buzzer status :";
+            button2.Location = new Point(222, 89);
+            button2.Name = "button2";
+            button2.Size = new Size(112, 34);
+            button2.TabIndex = 3;
+            button2.Text = "Test Buzzer";
+            button2.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -73,14 +74,14 @@
             label2.TabIndex = 2;
             label2.Text = "label2";
             // 
-            // button2
+            // label1
             // 
-            button2.Location = new Point(222, 89);
-            button2.Name = "button2";
-            button2.Size = new Size(112, 34);
-            button2.TabIndex = 3;
-            button2.Text = "Test Buzzer";
-            button2.UseVisualStyleBackColor = true;
+            label1.AutoSize = true;
+            label1.Location = new Point(41, 29);
+            label1.Name = "label1";
+            label1.Size = new Size(124, 25);
+            label1.TabIndex = 1;
+            label1.Text = "Buzzer status :";
             // 
             // Buzzer
             // 

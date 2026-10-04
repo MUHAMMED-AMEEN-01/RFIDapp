@@ -127,7 +127,7 @@ namespace RFIDapp
 
         private void buzzerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Buzzer buzzer = new Buzzer();
+            Buzzer buzzer = new Buzzer(reader);
             buzzer.Show();
         }
     }

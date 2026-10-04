@@ -63,7 +63,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(742, 225);
+            dataGridView1.Size = new Size(876, 225);
             dataGridView1.TabIndex = 1;
             // 
             // Column1
@@ -122,6 +122,7 @@
             button1.TabIndex = 2;
             button1.Text = "Stop Reading";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -147,7 +148,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(766, 450);
+            ClientSize = new Size(919, 450);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -164,7 +165,6 @@
         #endregion
 
         private Label label1;
-        private DataGridView dataGridView1;
         private Button button1;
         private Button button2;
         private DataGridViewTextBoxColumn Column1;
@@ -174,5 +174,6 @@
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column6;
         private Button button3;
+        private DataGridView dataGridView1;
     }
 }
