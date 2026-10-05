@@ -30,10 +30,12 @@
         {
             button1 = new Button();
             panel1 = new Panel();
-            button2 = new Button();
             label2 = new Label();
             label1 = new Label();
+            menuStrip1 = new MenuStrip();
+            toolStripMenuItem1 = new ToolStripMenuItem();
             panel1.SuspendLayout();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // button1
@@ -48,22 +50,12 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(button2);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(27, 93);
             panel1.Name = "panel1";
             panel1.Size = new Size(726, 194);
             panel1.TabIndex = 2;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(222, 89);
-            button2.Name = "button2";
-            button2.Size = new Size(112, 34);
-            button2.TabIndex = 3;
-            button2.Text = "Test Buzzer";
-            button2.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -83,6 +75,23 @@
             label1.TabIndex = 1;
             label1.Text = "Buzzer status :";
             // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(24, 24);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1 });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(800, 33);
+            menuStrip1.TabIndex = 3;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(44, 29);
+            toolStripMenuItem1.Text = "←";
+            toolStripMenuItem1.Click += toolStripMenuItem1_Click;
+            // 
             // Buzzer
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -90,11 +99,16 @@
             ClientSize = new Size(800, 450);
             Controls.Add(panel1);
             Controls.Add(button1);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "Buzzer";
             Text = "Buzzer";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -102,7 +116,8 @@
         private Button button1;
         private Panel panel1;
         private Label label1;
-        private Button button2;
         private Label label2;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem toolStripMenuItem1;
     }
 }

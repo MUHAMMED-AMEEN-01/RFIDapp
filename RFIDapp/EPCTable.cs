@@ -12,19 +12,22 @@ namespace RFIDapp
 
     public partial class EPCTable : Form
     {
-        TagData tag = new TagData();
         ImpinjReader reader;
-        public AppSession appSession;
+
         public EPCTable()
         {
             InitializeComponent();
 
         }
-        public EPCTable(AppSession session, ImpinjReader read)
+        public EPCTable(ImpinjReader read)
         {
             InitializeComponent();
-            appSession = session;
             reader = read;
+            if (!reader.IsConnected)
+            {
+                MessageBox.Show("Reader is not connected. Please connect to the reader first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -54,9 +57,9 @@ namespace RFIDapp
 
             foreach (Tag tag in report)
             {
-                foreach(DataRow rv in dataGridView1.Rows)
+                foreach (DataRow rv in dataGridView1.Rows)
                 {
-                    if (rv[0].ToString() == tag.Epc.ToString())
+                    if (rv[0].ToString() == tag.Epc.ToString() && rv[1].ToString() == tag.AntennaPortNumber.ToString())
                     {
                         rv[3] = tag.TagSeenCount.ToString();
                         rv[4] = tag.PeakRssiInDbm.ToString();
@@ -64,7 +67,7 @@ namespace RFIDapp
                         return;
                     }
                 }
-                dataGridView1.Rows.Add(tag.Epc.ToString(), tag.AntennaPortNumber.ToString(), tag.LastSeenTime.ToString(), tag.TagSeenCount.ToString(), tag.PeakRssiInDbm.ToString(),tag.FirstSeenTime);
+                dataGridView1.Rows.Add(tag.Epc.ToString(), tag.AntennaPortNumber.ToString(), tag.LastSeenTime.ToString(), tag.TagSeenCount.ToString(), tag.PeakRssiInDbm.ToString(), tag.FirstSeenTime);
             }
 
         }
@@ -76,7 +79,12 @@ namespace RFIDapp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            reader.Stop(); 
+            reader.Stop();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

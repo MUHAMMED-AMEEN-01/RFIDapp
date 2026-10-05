@@ -14,6 +14,12 @@ namespace RFIDapp
         ImpinjReader reader;
         public Buzzer()
         {
+
+            if (reader == null)
+            {
+                MessageBox.Show("Reader is not connected. Please connect to the reader first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
             InitializeComponent();
         }
         public Buzzer(ImpinjReader read)
@@ -38,6 +44,11 @@ namespace RFIDapp
                 label2.Text = "OFF";
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

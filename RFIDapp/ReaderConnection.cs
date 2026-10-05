@@ -15,7 +15,6 @@ namespace RFIDapp
 {
     public partial class ReaderConnection : Form
     {
-        AppSession appSession = new AppSession();
         public System.Windows.Forms.Timer timer;
         public ImpinjReader reader = new ImpinjReader();
 
@@ -27,7 +26,6 @@ namespace RFIDapp
                 button1.Enabled = false;
                 label5.Text = "Connected";
                 label5.ForeColor = Color.Green;
-                appSession.con = true;
             }
             else
             {
@@ -35,7 +33,6 @@ namespace RFIDapp
                 button2.Enabled = false;
                 label5.Text = "Disconnected";
                 label5.ForeColor = Color.Red;
-                appSession.con = false;
             }
         }
 
@@ -54,10 +51,21 @@ namespace RFIDapp
         public ReaderConnection()
         {
             InitializeComponent();
-            if (appSession.con)
+           
+                button1.Enabled = true;
+                button2.Enabled = false;
+                label5.Text = "Disconnected";
+                label5.ForeColor = Color.Red;
+        }
+
+        public ReaderConnection(ImpinjReader read)
+        {
+            InitializeComponent();
+            reader = read;
+            if (reader.IsConnected)
             {
-                button2.Enabled = true;
                 button1.Enabled = false;
+                button2.Enabled = true;
                 label5.Text = "Connected";
                 label5.ForeColor = Color.Green;
             }
@@ -68,7 +76,6 @@ namespace RFIDapp
                 label5.Text = "Disconnected";
                 label5.ForeColor = Color.Red;
             }
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -79,8 +86,7 @@ namespace RFIDapp
             try
             {
                 int port = Convert.ToInt32(textBox2.Text);
-                appSession.ipAddress = textBox1.Text;
-                appSession.port = port;
+                
                 if (ipPortValid.IsValidIP(textBox1.Text, port))
                 {
 
@@ -110,7 +116,6 @@ namespace RFIDapp
         private void button2_Click(object sender, EventArgs e)
         {
             reader.Disconnect();
-            appSession.con = false;
             clear();
         }
 
@@ -121,7 +126,7 @@ namespace RFIDapp
 
         private void ePCTableToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EPCTable EPC = new EPCTable(appSession, reader);
+            EPCTable EPC = new EPCTable( reader);
             EPC.Show();
         }
 
