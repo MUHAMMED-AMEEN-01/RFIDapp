@@ -57,17 +57,17 @@ namespace RFIDapp
 
             foreach (Tag tag in report)
             {
-                foreach (DataRow rv in dataGridView1.Rows)
+                foreach (DataGridViewRow rv in dataGridView1.Rows)
                 {
-                    if (rv[0].ToString() == tag.Epc.ToString() && rv[1].ToString() == tag.AntennaPortNumber.ToString())
+                    if (rv.Cells[0].ToString() == tag.Epc.ToString() && rv.Cells[1].ToString() == tag.AntennaPortNumber.ToString())
                     {
-                        rv[3] = tag.TagSeenCount.ToString();
-                        rv[4] = tag.PeakRssiInDbm.ToString();
-                        rv[5] = tag.FirstSeenTime.ToString();
+                        rv.Cells[3].Value = tag.TagSeenCount.ToString();
+                        rv.Cells[4].Value = tag.PeakRssiInDbm.ToString();
+                        rv.Cells[5].Value = tag.FirstSeenTime.ToString();
                         return;
                     }
                 }
-                dataGridView1.Rows.Add(tag.Epc.ToString(), tag.AntennaPortNumber.ToString(), tag.LastSeenTime.ToString(), tag.TagSeenCount.ToString(), tag.PeakRssiInDbm.ToString(), tag.FirstSeenTime);
+                dataGridView1.Rows.Add(tag.Epc.ToString(), tag.AntennaPortNumber.ToString(), tag.LastSeenTime.ToString(), tag.TagSeenCount.ToString(), tag.PeakRssiInDbm.ToString(), tag.FirstSeenTime.ToString());
             }
 
         }
