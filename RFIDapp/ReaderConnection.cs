@@ -42,6 +42,8 @@ namespace RFIDapp
             timer.Interval = 10000;
             timer.Tick += sts;
             timer.Start();
+            ePCTableToolStripMenuItem.Enabled = false;
+            buzzerToolStripMenuItem.Enabled = false;
         }
         public void clear()
         {
@@ -56,6 +58,8 @@ namespace RFIDapp
                 button2.Enabled = false;
                 label5.Text = "Disconnected";
                 label5.ForeColor = Color.Red;
+            ePCTableToolStripMenuItem.Enabled = false;
+            buzzerToolStripMenuItem.Enabled=false;
         }
 
         public ReaderConnection(ImpinjReader read)
@@ -68,6 +72,8 @@ namespace RFIDapp
                 button2.Enabled = true;
                 label5.Text = "Connected";
                 label5.ForeColor = Color.Green;
+                ePCTableToolStripMenuItem.Enabled = true;
+                buzzerToolStripMenuItem.Enabled = true;
             }
             else
             {
@@ -75,6 +81,8 @@ namespace RFIDapp
                 button2.Enabled = false;
                 label5.Text = "Disconnected";
                 label5.ForeColor = Color.Red;
+                ePCTableToolStripMenuItem.Enabled = false;
+                buzzerToolStripMenuItem.Enabled = false;
             }
         }
 
@@ -93,6 +101,14 @@ namespace RFIDapp
                     try
                     {
                         reader.Connect(textBox1.Text, port);
+
+                        button1.Enabled = false;
+                        button2.Enabled = true;
+                        label5.Text = "Connected";
+                        label5.ForeColor = Color.Green;
+                        ePCTableToolStripMenuItem.Enabled = false;
+                        buzzerToolStripMenuItem.Enabled = false;
+
                     }
                     catch (OctaneSdkException ex)
                     {
