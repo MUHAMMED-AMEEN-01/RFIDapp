@@ -28,131 +28,131 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
-            textBox1 = new TextBox();
-            label3 = new Label();
-            textBox2 = new TextBox();
-            button1 = new Button();
-            label4 = new Label();
-            label5 = new Label();
-            button2 = new Button();
-            menuStrip1 = new MenuStrip();
-            toolStripMenuItem1 = new ToolStripMenuItem();
-            ePCTableToolStripMenuItem = new ToolStripMenuItem();
-            buzzerToolStripMenuItem = new ToolStripMenuItem();
-            menuStrip1.SuspendLayout();
+            heading = new Label();
+            txtIP = new Label();
+            inputIp = new TextBox();
+            txtPort = new Label();
+            inputPort = new TextBox();
+            btnConnect = new Button();
+            txtStatus = new Label();
+            dispStatus = new Label();
+            btnDisconnect = new Button();
+            menuStrip = new MenuStrip();
+            back = new ToolStripMenuItem();
+            epcTable = new ToolStripMenuItem();
+            buzzer = new ToolStripMenuItem();
+            menuStrip.SuspendLayout();
             SuspendLayout();
             // 
-            // label1
+            // heading
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Underline);
-            label1.Location = new Point(268, 43);
-            label1.Name = "label1";
-            label1.Size = new Size(174, 25);
-            label1.TabIndex = 0;
-            label1.Text = "Reader Connection";
+            heading.AutoSize = true;
+            heading.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Underline);
+            heading.Location = new Point(268, 43);
+            heading.Name = "heading";
+            heading.Size = new Size(174, 25);
+            heading.TabIndex = 0;
+            heading.Text = "Reader Connection";
             // 
-            // label2
+            // txtIP
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(43, 107);
-            label2.Name = "label2";
-            label2.Size = new Size(95, 25);
-            label2.TabIndex = 1;
-            label2.Text = "Reader IP :";
+            txtIP.AutoSize = true;
+            txtIP.Location = new Point(43, 107);
+            txtIP.Name = "txtIP";
+            txtIP.Size = new Size(95, 25);
+            txtIP.TabIndex = 1;
+            txtIP.Text = "Reader IP :";
             // 
-            // textBox1
+            // inputIp
             // 
-            textBox1.Location = new Point(145, 109);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(150, 31);
-            textBox1.TabIndex = 2;
+            inputIp.Location = new Point(145, 109);
+            inputIp.Name = "inputIp";
+            inputIp.Size = new Size(150, 31);
+            inputIp.TabIndex = 2;
             // 
-            // label3
+            // txtPort
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(61, 180);
-            label3.Name = "label3";
-            label3.Size = new Size(114, 25);
-            label3.TabIndex = 3;
-            label3.Text = "Reader port :";
+            txtPort.AutoSize = true;
+            txtPort.Location = new Point(61, 180);
+            txtPort.Name = "txtPort";
+            txtPort.Size = new Size(114, 25);
+            txtPort.TabIndex = 3;
+            txtPort.Text = "Reader port :";
             // 
-            // textBox2
+            // inputPort
             // 
-            textBox2.Location = new Point(185, 181);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(150, 31);
-            textBox2.TabIndex = 4;
+            inputPort.Location = new Point(185, 181);
+            inputPort.Name = "inputPort";
+            inputPort.Size = new Size(150, 31);
+            inputPort.TabIndex = 4;
             // 
-            // button1
+            // btnConnect
             // 
-            button1.Location = new Point(158, 248);
-            button1.Name = "button1";
-            button1.Size = new Size(112, 34);
-            button1.TabIndex = 5;
-            button1.Text = "Connect";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnConnect.Location = new Point(158, 248);
+            btnConnect.Name = "btnConnect";
+            btnConnect.Size = new Size(112, 34);
+            btnConnect.TabIndex = 5;
+            btnConnect.Text = "Connect";
+            btnConnect.UseVisualStyleBackColor = true;
+            btnConnect.Click += button1_Click;
             // 
-            // label4
+            // txtStatus
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(88, 325);
-            label4.Name = "label4";
-            label4.Size = new Size(69, 25);
-            label4.TabIndex = 6;
-            label4.Text = "Status :";
+            txtStatus.AutoSize = true;
+            txtStatus.Location = new Point(88, 325);
+            txtStatus.Name = "txtStatus";
+            txtStatus.Size = new Size(69, 25);
+            txtStatus.TabIndex = 6;
+            txtStatus.Text = "Status :";
             // 
-            // label5
+            // dispStatus
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(171, 329);
-            label5.Name = "label5";
-            label5.Size = new Size(0, 25);
-            label5.TabIndex = 7;
+            dispStatus.AutoSize = true;
+            dispStatus.Location = new Point(171, 329);
+            dispStatus.Name = "dispStatus";
+            dispStatus.Size = new Size(0, 25);
+            dispStatus.TabIndex = 7;
             // 
-            // button2
+            // btnDisconnect
             // 
-            button2.Location = new Point(290, 248);
-            button2.Name = "button2";
-            button2.Size = new Size(112, 34);
-            button2.TabIndex = 8;
-            button2.Text = "Disconnect";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            btnDisconnect.Location = new Point(290, 248);
+            btnDisconnect.Name = "btnDisconnect";
+            btnDisconnect.Size = new Size(112, 34);
+            btnDisconnect.TabIndex = 8;
+            btnDisconnect.Text = "Disconnect";
+            btnDisconnect.UseVisualStyleBackColor = true;
+            btnDisconnect.Click += button2_Click;
             // 
-            // menuStrip1
+            // menuStrip
             // 
-            menuStrip1.ImageScalingSize = new Size(24, 24);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, ePCTableToolStripMenuItem, buzzerToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 33);
-            menuStrip1.TabIndex = 9;
-            menuStrip1.Text = "menuStrip1";
+            menuStrip.ImageScalingSize = new Size(24, 24);
+            menuStrip.Items.AddRange(new ToolStripItem[] { back, epcTable, buzzer });
+            menuStrip.Location = new Point(0, 0);
+            menuStrip.Name = "menuStrip";
+            menuStrip.Size = new Size(800, 33);
+            menuStrip.TabIndex = 9;
+            menuStrip.Text = "menuStrip1";
             // 
-            // toolStripMenuItem1
+            // back
             // 
-            toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(44, 29);
-            toolStripMenuItem1.Text = "←";
-            toolStripMenuItem1.Click += toolStripMenuItem1_Click;
+            back.Name = "back";
+            back.Size = new Size(44, 29);
+            back.Text = "←";
+            back.Click += toolStripMenuItem1_Click;
             // 
-            // ePCTableToolStripMenuItem
+            // epcTable
             // 
-            ePCTableToolStripMenuItem.Name = "ePCTableToolStripMenuItem";
-            ePCTableToolStripMenuItem.Size = new Size(103, 29);
-            ePCTableToolStripMenuItem.Text = "EPC Table";
-            ePCTableToolStripMenuItem.Click += ePCTableToolStripMenuItem_Click;
+            epcTable.Name = "epcTable";
+            epcTable.Size = new Size(103, 29);
+            epcTable.Text = "EPC Table";
+            epcTable.Click += ePCTableToolStripMenuItem_Click;
             // 
-            // buzzerToolStripMenuItem
+            // buzzer
             // 
-            buzzerToolStripMenuItem.Name = "buzzerToolStripMenuItem";
-            buzzerToolStripMenuItem.Size = new Size(79, 29);
-            buzzerToolStripMenuItem.Text = "Buzzer";
-            buzzerToolStripMenuItem.Click += buzzerToolStripMenuItem_Click;
+            buzzer.Name = "buzzer";
+            buzzer.Size = new Size(79, 29);
+            buzzer.Text = "Buzzer";
+            buzzer.Click += buzzerToolStripMenuItem_Click;
             // 
             // ReaderConnection
             // 
@@ -160,40 +160,40 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.bg;
             ClientSize = new Size(800, 450);
-            Controls.Add(button2);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(button1);
-            Controls.Add(textBox2);
-            Controls.Add(label3);
-            Controls.Add(textBox1);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(menuStrip1);
-            MainMenuStrip = menuStrip1;
+            Controls.Add(btnDisconnect);
+            Controls.Add(dispStatus);
+            Controls.Add(txtStatus);
+            Controls.Add(btnConnect);
+            Controls.Add(inputPort);
+            Controls.Add(txtPort);
+            Controls.Add(inputIp);
+            Controls.Add(txtIP);
+            Controls.Add(heading);
+            Controls.Add(menuStrip);
+            MainMenuStrip = menuStrip;
             Name = "ReaderConnection";
             Text = "ReaderConnection";
             WindowState = FormWindowState.Maximized;
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
+            menuStrip.ResumeLayout(false);
+            menuStrip.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private Label label2;
-        private TextBox textBox1;
-        private Label label3;
-        private TextBox textBox2;
-        private Button button1;
-        private Label label4;
-        private Label label5;
-        private Button button2;
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem toolStripMenuItem1;
-        private ToolStripMenuItem ePCTableToolStripMenuItem;
-        private ToolStripMenuItem buzzerToolStripMenuItem;
+        private Label heading;
+        private Label txtIP;
+        private TextBox inputIp;
+        private Label txtPort;
+        private TextBox inputPort;
+        private Button btnConnect;
+        private Label txtStatus;
+        private Label dispStatus;
+        private Button btnDisconnect;
+        private MenuStrip menuStrip;
+        private ToolStripMenuItem back;
+        private ToolStripMenuItem epcTable;
+        private ToolStripMenuItem buzzer;
     }
 }

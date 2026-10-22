@@ -2,32 +2,32 @@ using Impinj.OctaneSdk;
 
 namespace RFIDapp
 {
-    public partial class Form1 : Form
+    public partial class Index : Form
     {
         ImpinjReader reader;
-        public Form1()
+        public Index()
         {
             InitializeComponent();
             if (reader == null)
             {
-                buzzerToolStripMenuItem.Enabled = false;
-                ePCTableToolStripMenuItem.Enabled = false;
+                buzzer.Enabled = false;
+                epcTable.Enabled = false;
             }
         }
 
-        public Form1(ImpinjReader read)
+        public Index(ImpinjReader read)
         {
             InitializeComponent();
             reader = read;
             if (reader.IsConnected)
             {
-                buzzerToolStripMenuItem.Enabled = true;
-                ePCTableToolStripMenuItem.Enabled = true;
+                buzzer.Enabled = true;
+                epcTable.Enabled = true;
             }
             else
             {
-                buzzerToolStripMenuItem.Enabled = false;
-                ePCTableToolStripMenuItem.Enabled = false;
+                buzzer.Enabled = false;
+                epcTable.Enabled = false;
             }
         }
         private void buzzerToolStripMenuItem_Click(object sender, EventArgs e)

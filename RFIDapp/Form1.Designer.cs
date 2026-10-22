@@ -1,6 +1,6 @@
 ﻿namespace RFIDapp
 {
-    partial class Form1
+    partial class Index
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,67 +28,67 @@
         /// </summary>
         private void InitializeComponent()
         {
-            menuStrip1 = new MenuStrip();
-            readerConnectionToolStripMenuItem = new ToolStripMenuItem();
-            ePCTableToolStripMenuItem = new ToolStripMenuItem();
-            buzzerToolStripMenuItem = new ToolStripMenuItem();
-            menuStrip1.SuspendLayout();
+            menuStrip = new MenuStrip();
+            readerConnection = new ToolStripMenuItem();
+            epcTable = new ToolStripMenuItem();
+            buzzer = new ToolStripMenuItem();
+            menuStrip.SuspendLayout();
             SuspendLayout();
             // 
-            // menuStrip1
+            // menuStrip
             // 
-            menuStrip1.BackColor = SystemColors.ActiveCaption;
-            menuStrip1.ImageScalingSize = new Size(24, 24);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { readerConnectionToolStripMenuItem, ePCTableToolStripMenuItem, buzzerToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 33);
-            menuStrip1.TabIndex = 0;
-            menuStrip1.Text = "menuStrip1";
+            menuStrip.BackColor = SystemColors.ActiveCaption;
+            menuStrip.ImageScalingSize = new Size(24, 24);
+            menuStrip.Items.AddRange(new ToolStripItem[] { readerConnection, epcTable, buzzer });
+            menuStrip.Location = new Point(0, 0);
+            menuStrip.Name = "menuStrip";
+            menuStrip.Size = new Size(800, 33);
+            menuStrip.TabIndex = 0;
+            menuStrip.Text = "menuStrip1";
             // 
-            // readerConnectionToolStripMenuItem
+            // readerConnection
             // 
-            readerConnectionToolStripMenuItem.Name = "readerConnectionToolStripMenuItem";
-            readerConnectionToolStripMenuItem.Size = new Size(174, 29);
-            readerConnectionToolStripMenuItem.Text = "Reader connection";
-            readerConnectionToolStripMenuItem.Click += readerConnectionToolStripMenuItem_Click;
+            readerConnection.Name = "readerConnection";
+            readerConnection.Size = new Size(174, 29);
+            readerConnection.Text = "Reader connection";
+            readerConnection.Click += readerConnectionToolStripMenuItem_Click;
             // 
-            // ePCTableToolStripMenuItem
+            // epcTable
             // 
-            ePCTableToolStripMenuItem.Name = "ePCTableToolStripMenuItem";
-            ePCTableToolStripMenuItem.Size = new Size(102, 29);
-            ePCTableToolStripMenuItem.Text = "EPC table";
-            ePCTableToolStripMenuItem.Click += ePCTableToolStripMenuItem_Click;
+            epcTable.Name = "epcTable";
+            epcTable.Size = new Size(102, 29);
+            epcTable.Text = "EPC table";
+            epcTable.Click += ePCTableToolStripMenuItem_Click;
             // 
-            // buzzerToolStripMenuItem
+            // buzzer
             // 
-            buzzerToolStripMenuItem.Name = "buzzerToolStripMenuItem";
-            buzzerToolStripMenuItem.Size = new Size(79, 29);
-            buzzerToolStripMenuItem.Text = "Buzzer";
-            buzzerToolStripMenuItem.Click += buzzerToolStripMenuItem_Click;
+            buzzer.Name = "buzzer";
+            buzzer.Size = new Size(79, 29);
+            buzzer.Text = "Buzzer";
+            buzzer.Click += buzzerToolStripMenuItem_Click;
             // 
-            // Form1
+            // Index
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.bg;
             ClientSize = new Size(800, 450);
-            Controls.Add(menuStrip1);
-            MainMenuStrip = menuStrip1;
-            Name = "Form1";
-            Text = "Form1";
+            Controls.Add(menuStrip);
+            MainMenuStrip = menuStrip;
+            Name = "Index";
+            Text = "Wellcome";
             WindowState = FormWindowState.Maximized;
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
+            menuStrip.ResumeLayout(false);
+            menuStrip.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem readerConnectionToolStripMenuItem;
-        private ToolStripMenuItem ePCTableToolStripMenuItem;
-        private ToolStripMenuItem buzzerToolStripMenuItem;
+        private MenuStrip menuStrip;
+        private ToolStripMenuItem readerConnection;
+        private ToolStripMenuItem epcTable;
+        private ToolStripMenuItem buzzer;
     }
 }

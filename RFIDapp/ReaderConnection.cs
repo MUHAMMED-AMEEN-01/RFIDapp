@@ -22,44 +22,42 @@ namespace RFIDapp
         {
             if (reader.IsConnected)
             {
-                button2.Enabled = true;
-                button1.Enabled = false;
-                label5.Text = "Connected";
-                label5.ForeColor = Color.Green;
+                btnDisconnect.Enabled = true;
+                btnConnect.Enabled = false;
+                dispStatus.Text = "Connected";
+                dispStatus.ForeColor = Color.Green;
             }
             else
             {
-                button1.Enabled = true;
-                button2.Enabled = false;
-                label5.Text = "Disconnected";
-                label5.ForeColor = Color.Red;
+                btnConnect.Enabled = true;
+                btnDisconnect.Enabled = false;
+                dispStatus.Text = "Disconnected";
+                dispStatus.ForeColor = Color.Red;
             }
         }
 
         public void timerfunc()
         {
             timer = new System.Windows.Forms.Timer();
-            timer.Interval = 10000;
+            timer.Interval = 60000;
             timer.Tick += sts;
             timer.Start();
-            ePCTableToolStripMenuItem.Enabled = false;
-            buzzerToolStripMenuItem.Enabled = false;
+            epcTable.Enabled = false;
+            buzzer.Enabled = false;
         }
         public void clear()
         {
-            textBox1.Clear();
-            textBox2.Clear();
+            inputIp.Clear();
+            inputPort.Clear();
         }
         public ReaderConnection()
         {
             InitializeComponent();
            
-                button1.Enabled = true;
-                button2.Enabled = false;
-                label5.Text = "Disconnected";
-                label5.ForeColor = Color.Red;
-            ePCTableToolStripMenuItem.Enabled = false;
-            buzzerToolStripMenuItem.Enabled=false;
+                btnConnect.Enabled = true;
+                btnDisconnect.Enabled = false;
+            epcTable.Enabled = false;
+            buzzer.Enabled=false;
         }
 
         public ReaderConnection(ImpinjReader read)
@@ -68,64 +66,69 @@ namespace RFIDapp
             reader = read;
             if (reader.IsConnected)
             {
-                button1.Enabled = false;
-                button2.Enabled = true;
-                label5.Text = "Connected";
-                label5.ForeColor = Color.Green;
-                ePCTableToolStripMenuItem.Enabled = true;
-                buzzerToolStripMenuItem.Enabled = true;
+                btnConnect.Enabled = false;
+                btnDisconnect.Enabled = true;
+                dispStatus.Text = "Connected";
+                dispStatus.ForeColor = Color.Green;
+                epcTable.Enabled = true;
+                buzzer.Enabled = true;
             }
             else
             {
-                button1.Enabled = true;
-                button2.Enabled = false;
-                label5.Text = "Disconnected";
-                label5.ForeColor = Color.Red;
-                ePCTableToolStripMenuItem.Enabled = false;
-                buzzerToolStripMenuItem.Enabled = false;
+                btnConnect.Enabled = true;
+                btnDisconnect.Enabled = false;
+                dispStatus.Text = "Disconnected";
+                dispStatus.ForeColor = Color.Red;
+                epcTable.Enabled = false;
+                buzzer.Enabled = false;
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            label5.Text = "Connecting...";
-            label5.ForeColor = Color.Orange;
+            int port;
+            dispStatus.Text = "Connecting...";
+            dispStatus.ForeColor = Color.Orange;
             ipPortValid IpPortValid = new ipPortValid();
             try
             {
-                int port = Convert.ToInt32(textBox2.Text);
-                
-                if (ipPortValid.IsValidIP(textBox1.Text, port))
+                 port = Convert.ToInt32(inputPort.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "It take default port '5084'","null or invalid port", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                port = 5084;
+            }
+
+            if (ipPortValid.IsValidIP(inputIp.Text, port))
                 {
 
                     try
                     {
-                        reader.Connect(textBox1.Text, port);
+                        reader.Connect(inputIp.Text, port);
 
-                        button1.Enabled = false;
-                        button2.Enabled = true;
-                        label5.Text = "Connected";
-                        label5.ForeColor = Color.Green;
-                        ePCTableToolStripMenuItem.Enabled = false;
-                        buzzerToolStripMenuItem.Enabled = false;
+                        btnConnect.Enabled = false;
+                        btnDisconnect.Enabled = true;
+                        dispStatus.Text = "Connected";
+                        dispStatus.ForeColor = Color.Green;
+                        epcTable.Enabled = false;
+                        buzzer.Enabled = false;
 
                     }
                     catch (OctaneSdkException ex)
                     {
-                        label5.Text = "Connection Error";
-                        label5.ForeColor = Color.DarkRed;
+                        dispStatus.Text = "Connection Error";
+                        dispStatus.ForeColor = Color.DarkRed;
                         MessageBox.Show(ex.Message);
                     }
                 }
                 else
                 {
-                    clear();
+                dispStatus.Text = "Connection Error";
+                dispStatus.ForeColor = Color.DarkRed;
+                clear();
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+           
             timerfunc();
         }
 

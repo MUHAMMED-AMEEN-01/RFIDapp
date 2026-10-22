@@ -33,15 +33,15 @@ namespace RFIDapp
             try
             {
                 reader.SetGpo(5, true);
-                label2.Text = "ON";
+                displayStatus.Text = "ON";
                 Thread.Sleep(3000);
                 reader.SetGpo(5, false);
-                label2.Text = "OFF";
+                displayStatus.Text = "OFF";
             }
             catch (OctaneSdkException ex)
             {
                 reader.SetGpo(5, false);
-                label2.Text = "OFF";
+                displayStatus.Text = "OFF";
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

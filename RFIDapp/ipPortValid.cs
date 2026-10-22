@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Net;
 using System.Windows.Forms;
 
 namespace RFIDapp
@@ -10,10 +9,11 @@ namespace RFIDapp
     {
         public static bool IsValidIP(string IP, int Port)
         {
-            bool isValidIp = (IP.Contains(".") && IP.Split('.').Length == 4);
-            if (IPAddress.TryParse(IP, out var ipAddress)&& isValidIp)
+            UriHostNameType hostType = Uri.CheckHostName(IP);
+
+            if (hostType== UriHostNameType.IPv4 || hostType== UriHostNameType.IPv6 || hostType== UriHostNameType.Dns)
             {
-                if (Convert.ToInt64(Port) >= 0 && Convert.ToInt64(Port) <= 65535)
+                if (Convert.ToInt64(Port) <= 65535)
                 {
                     return true;
                 }

@@ -28,141 +28,141 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            menuStrip1 = new MenuStrip();
-            toolStripMenuItem1 = new ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            menuStrip1.SuspendLayout();
+            heading = new Label();
+            tableEpc = new DataGridView();
+            btnStop = new Button();
+            btnClear = new Button();
+            btnStart = new Button();
+            menuStrip = new MenuStrip();
+            back = new ToolStripMenuItem();
+            EPC = new DataGridViewTextBoxColumn();
+            antennaId = new DataGridViewTextBoxColumn();
+            lastSeen = new DataGridViewTextBoxColumn();
+            readCount = new DataGridViewTextBoxColumn();
+            RSSI = new DataGridViewTextBoxColumn();
+            timestamp = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)tableEpc).BeginInit();
+            menuStrip.SuspendLayout();
             SuspendLayout();
             // 
-            // label1
+            // heading
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Underline);
-            label1.Location = new Point(304, 50);
-            label1.Name = "label1";
-            label1.Size = new Size(94, 25);
-            label1.TabIndex = 0;
-            label1.Text = "EPC Table";
+            heading.AutoSize = true;
+            heading.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Underline);
+            heading.Location = new Point(304, 50);
+            heading.Name = "heading";
+            heading.Size = new Size(94, 25);
+            heading.TabIndex = 0;
+            heading.Text = "EPC Table";
             // 
-            // dataGridView1
+            // tableEpc
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AllowUserToOrderColumns = true;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6 });
-            dataGridView1.Location = new Point(12, 127);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(876, 225);
-            dataGridView1.TabIndex = 1;
+            tableEpc.AllowUserToAddRows = false;
+            tableEpc.AllowUserToDeleteRows = false;
+            tableEpc.AllowUserToOrderColumns = true;
+            tableEpc.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            tableEpc.Columns.AddRange(new DataGridViewColumn[] { EPC, antennaId, lastSeen, readCount, RSSI, timestamp });
+            tableEpc.Location = new Point(12, 127);
+            tableEpc.Name = "tableEpc";
+            tableEpc.ReadOnly = true;
+            tableEpc.RowHeadersWidth = 62;
+            tableEpc.Size = new Size(876, 225);
+            tableEpc.TabIndex = 1;
             // 
-            // Column1
+            // btnStop
             // 
-            Column1.HeaderText = "EPC";
-            Column1.MinimumWidth = 8;
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            Column1.Width = 150;
+            btnStop.Location = new Point(152, 369);
+            btnStop.Name = "btnStop";
+            btnStop.Size = new Size(140, 34);
+            btnStop.TabIndex = 2;
+            btnStop.Text = "Stop Reading";
+            btnStop.UseVisualStyleBackColor = true;
+            btnStop.Click += button1_Click;
             // 
-            // Column2
+            // btnClear
             // 
-            Column2.HeaderText = "Antenna ID";
-            Column2.MinimumWidth = 8;
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            Column2.Width = 150;
+            btnClear.Location = new Point(327, 375);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(112, 34);
+            btnClear.TabIndex = 3;
+            btnClear.Text = "Clear Table";
+            btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += button2_Click;
             // 
-            // Column3
+            // btnStart
             // 
-            Column3.HeaderText = "Last Seen";
-            Column3.MinimumWidth = 8;
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            Column3.Width = 150;
+            btnStart.Location = new Point(286, 87);
+            btnStart.Name = "btnStart";
+            btnStart.Size = new Size(112, 34);
+            btnStart.TabIndex = 4;
+            btnStart.Text = "Start";
+            btnStart.UseVisualStyleBackColor = true;
+            btnStart.Click += button3_Click;
             // 
-            // Column4
+            // menuStrip
             // 
-            Column4.HeaderText = "Read Count";
-            Column4.MinimumWidth = 8;
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            Column4.Width = 75;
+            menuStrip.ImageScalingSize = new Size(24, 24);
+            menuStrip.Items.AddRange(new ToolStripItem[] { back });
+            menuStrip.Location = new Point(0, 0);
+            menuStrip.Name = "menuStrip";
+            menuStrip.Size = new Size(919, 33);
+            menuStrip.TabIndex = 5;
+            menuStrip.Text = "menuStrip1";
             // 
-            // Column5
+            // back
             // 
-            Column5.HeaderText = "RSSI";
-            Column5.MinimumWidth = 8;
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            Column5.Width = 150;
+            back.Name = "back";
+            back.Size = new Size(44, 29);
+            back.Text = "←";
+            back.Click += toolStripMenuItem1_Click;
             // 
-            // Column6
+            // EPC
             // 
-            Column6.HeaderText = "Timestamp";
-            Column6.MinimumWidth = 8;
-            Column6.Name = "Column6";
-            Column6.ReadOnly = true;
-            Column6.Width = 150;
+            EPC.HeaderText = "EPC";
+            EPC.MinimumWidth = 8;
+            EPC.Name = "EPC";
+            EPC.ReadOnly = true;
+            EPC.Width = 150;
             // 
-            // button1
+            // antennaId
             // 
-            button1.Location = new Point(152, 369);
-            button1.Name = "button1";
-            button1.Size = new Size(140, 34);
-            button1.TabIndex = 2;
-            button1.Text = "Stop Reading";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            antennaId.HeaderText = "Antenna ID";
+            antennaId.MinimumWidth = 8;
+            antennaId.Name = "antennaId";
+            antennaId.ReadOnly = true;
+            antennaId.Width = 150;
             // 
-            // button2
+            // lastSeen
             // 
-            button2.Location = new Point(327, 375);
-            button2.Name = "button2";
-            button2.Size = new Size(112, 34);
-            button2.TabIndex = 3;
-            button2.Text = "Clear Table";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            lastSeen.HeaderText = "Last Seen";
+            lastSeen.MinimumWidth = 8;
+            lastSeen.Name = "lastSeen";
+            lastSeen.ReadOnly = true;
+            lastSeen.Width = 150;
             // 
-            // button3
+            // readCount
             // 
-            button3.Location = new Point(286, 87);
-            button3.Name = "button3";
-            button3.Size = new Size(112, 34);
-            button3.TabIndex = 4;
-            button3.Text = "Start";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            readCount.HeaderText = "Read Count";
+            readCount.MinimumWidth = 8;
+            readCount.Name = "readCount";
+            readCount.ReadOnly = true;
+            readCount.Width = 75;
             // 
-            // menuStrip1
+            // RSSI
             // 
-            menuStrip1.ImageScalingSize = new Size(24, 24);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1 });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(919, 33);
-            menuStrip1.TabIndex = 5;
-            menuStrip1.Text = "menuStrip1";
+            RSSI.HeaderText = "RSSI";
+            RSSI.MinimumWidth = 8;
+            RSSI.Name = "RSSI";
+            RSSI.ReadOnly = true;
+            RSSI.Width = 150;
             // 
-            // toolStripMenuItem1
+            // timestamp
             // 
-            toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(44, 29);
-            toolStripMenuItem1.Text = "←";
-            toolStripMenuItem1.Click += toolStripMenuItem1_Click;
+            timestamp.HeaderText = "Timestamp";
+            timestamp.MinimumWidth = 8;
+            timestamp.Name = "timestamp";
+            timestamp.ReadOnly = true;
+            timestamp.Width = 150;
             // 
             // EPCTable
             // 
@@ -170,37 +170,37 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.bg;
             ClientSize = new Size(919, 450);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(dataGridView1);
-            Controls.Add(label1);
-            Controls.Add(menuStrip1);
-            MainMenuStrip = menuStrip1;
+            Controls.Add(btnStart);
+            Controls.Add(btnClear);
+            Controls.Add(btnStop);
+            Controls.Add(tableEpc);
+            Controls.Add(heading);
+            Controls.Add(menuStrip);
+            MainMenuStrip = menuStrip;
             Name = "EPCTable";
             Text = "EPCTable";
             WindowState = FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)tableEpc).EndInit();
+            menuStrip.ResumeLayout(false);
+            menuStrip.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private Button button1;
-        private Button button2;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
-        private Button button3;
-        private DataGridView dataGridView1;
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem toolStripMenuItem1;
+        private Label heading;
+        private Button btnStop;
+        private Button btnClear;
+        private Button btnStart;
+        private DataGridView tableEpc;
+        private MenuStrip menuStrip;
+        private ToolStripMenuItem back;
+        private DataGridViewTextBoxColumn EPC;
+        private DataGridViewTextBoxColumn antennaId;
+        private DataGridViewTextBoxColumn lastSeen;
+        private DataGridViewTextBoxColumn readCount;
+        private DataGridViewTextBoxColumn RSSI;
+        private DataGridViewTextBoxColumn timestamp;
     }
 }
