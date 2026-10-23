@@ -49,13 +49,15 @@ namespace RFIDapp
             {
                 ReaderConnection readerConnection = new ReaderConnection(reader);
                 readerConnection.Show();
+                
             }
             else
             {
                 ReaderConnection readerConnection = new ReaderConnection();
                 readerConnection.Show();
+                
             }
-
+       
         }
     }
 }

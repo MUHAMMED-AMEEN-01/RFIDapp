@@ -140,6 +140,8 @@ namespace RFIDapp
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            Index form1 = new Index(reader);
+            form1.Show();
             this.Close();
         }
 
