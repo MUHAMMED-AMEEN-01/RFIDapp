@@ -59,12 +59,12 @@ namespace RFIDapp
             {
                 foreach (DataGridViewRow rv in tableEpc.Rows)
                 {
-                    if (rv.Cells[0].ToString() == tag.Epc.ToString() && rv.Cells[1].ToString() == tag.AntennaPortNumber.ToString())
+                    if (rv.Cells[0].Value == tag.Epc.ToString() && rv.Cells[1].Value == tag.AntennaPortNumber.ToString())
                     {
                         rv.Cells[3].Value = tag.TagSeenCount.ToString();
                         rv.Cells[4].Value = tag.PeakRssiInDbm.ToString();
                         rv.Cells[5].Value = tag.FirstSeenTime.ToString();
-                        return;
+                        continue;
                     }
                 }
                 tableEpc.Rows.Add(tag.Epc.ToString(), tag.AntennaPortNumber.ToString(), tag.LastSeenTime.ToString(), tag.TagSeenCount.ToString(), tag.PeakRssiInDbm.ToString(), tag.FirstSeenTime.ToString());
@@ -74,7 +74,7 @@ namespace RFIDapp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            tableEpc.DataSource = null;
+            tableEpc.Rows.Clear();
         }
 
         private void button1_Click(object sender, EventArgs e)
