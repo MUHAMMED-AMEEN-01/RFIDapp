@@ -28,13 +28,13 @@ namespace RFIDapp
             reader = read;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async Task button1_Click(object sender, EventArgs e)
         {
             try
             {
                 reader.SetGpo(5, true);
                 displayStatus.Text = "ON";
-                Thread.Sleep(3000);
+                await Task.Delay(5000);
                 reader.SetGpo(5, false);
                 displayStatus.Text = "OFF";
             }
