@@ -37,13 +37,13 @@ Follow these steps to run the project locally:
 Project structure:
 ```
 RFIDapp/
-|-- dependencies/	## Contains the Octian SDK 6.0.0 and other dependencies required for the project.
-|-- Form1.cs		## The Wellcome form of the application.
-|-- ReaderConnect.cs	## The form to connect to the Impinj R700 RFID reader.
-|-- EPCTable.cs		## The form to view the EPCs that are read by the reader.
-|-- buzzer.cs		## The form to make an alarm.
-|--ipPortValid.cs	## The class to validate the IP address and port number.
-|-- Program.cs		## The main entry point of the application.
+├── dependencies/		## Contains the Octian SDK 6.0.0 and other dependencies required for the project.
+├── Form1.cs			## The Wellcome form of the application.
+├── ReaderConnect.cs	## The form to connect to the Impinj R700 RFID reader.
+├── EPCTable.cs			## The form to view the EPCs that are read by the reader.
+├── buzzer.cs			## The form to make an alarm.
+├──ipPortValid.cs		## The class to validate the IP address and port number.
+└── Program.cs			## The main entry point of the application.
 ```
 
 ---	
